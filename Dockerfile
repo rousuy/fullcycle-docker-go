@@ -1,4 +1,9 @@
-FROM golang:alpine3.19 AS build
+FROM golang:alpine3.19 AS builder
+
+LABEL maintainer="Rodrigo Usuy"
+
+ARG TAG_NAME
+ENV IMAGE_TAG=${TAG_NAME}}
 
 WORKDIR /app
 
@@ -10,6 +15,6 @@ FROM scratch
 
 WORKDIR /app
 
-COPY --from=build /app/main .
+COPY --from=builder /app/main .
 
 ENTRYPOINT [ "./main" ]

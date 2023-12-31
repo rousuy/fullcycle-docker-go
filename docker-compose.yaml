@@ -4,5 +4,6 @@ services:
   app:
     build:
       context: .
+      args:
+        - TAG_NAME=rousuy/fullcycle-docker-go:latest
     container_name: app
-    tty: true
