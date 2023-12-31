@@ -9,19 +9,23 @@
 
 ## Overview
 
-This repository hosts a simple Go Lang project aiming to create a Docker image that, upon execution, proudly declares: "Full Cycle Rocks!!"
+This repository hosts a simple Go Lang challenge aiming to create a Docker image that, upon execution, proudly declares: "Full Cycle Rocks!!"
 
 ## Docker Image
 In building this Docker image, techniques such as multi-staging were used for efficiency and reduced size. The process starts with a Golang Alpine image for compilation and ends with a minimalist "scratch" image for the final runtime. This approach guarantees a compact and lightweight image, ensuring an efficient deployment process.
 
 #### Image Size: 1.8MB
 
+### Run app locally
+```
+make execute
+```
 
 ### DockerHub
 
 Repository: [https://hub.docker.com/repository/docker/rousuy/fullcycle-docker-go](https://hub.docker.com/repository/docker/rousuy/fullcycle-docker-go/general).
 
-CLI:
+Docker CLI:
 
 ```bash
 docker run rousuy/fullcycle-docker-go
